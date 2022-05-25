@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -19,7 +18,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "baseUrl": "src",
+    "paths": {
+      "@env": ["environments/environment"],
+      "@shared/*": ["app/shared/*"],
+      "@core/*": ["app/core/*"],
+      "@structure/*": ["app/structure/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

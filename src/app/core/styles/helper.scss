@@ -1,0 +1,74 @@
+@import "./buttons";
+@import "./typography";
+@import "colors";
+@import "fonts";
+
+.ep-form-field {
+  margin-bottom: 6px;
+
+  label {
+    @extend .body-copy-2;
+    color: $blue-header-text;
+  }
+
+  input {
+    @extend .body-copy-2;
+    margin: 0 0 6px 0;
+    width: 100%;
+    padding: 7px;
+    border-radius: 4px;
+    border: 1.4px solid $lightgray;
+    box-shadow: none !important;
+    outline: none !important;
+
+    ::placeholder {
+      @extend .body-copy-2;
+      color: $gray-placeholder-text;
+      opacity: 1;
+    }
+  }
+
+  select {
+    @extend .body-copy-2;
+    margin: 0 0 6px 0;
+    width: 100%;
+    padding: 6.5px;
+    border-radius: 4px;
+    color: $blue-body-text;
+    border: 1.4px solid $lightgray;
+    box-shadow: none !important;
+    outline: none !important;
+
+    option {
+      @extend .body-copy-2;
+      color: $blue-body-text;
+      opacity: 1;
+    }
+
+  }
+
+  textarea {
+    @extend .body-copy-2;
+    margin: 0 0 6px 0;
+    width: 100%;
+    border-radius: 4px;
+    border: 1.4px solid $lightgray;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: none;
+
+    ::placeholder {
+      @extend .body-copy-2;
+      color: $gray-placeholder-text;
+      opacity: 1;
+    }
+  }
+}
+
+.ep-form-field-label {
+  @extend .body-copy-2-headerblue;
+}
+
+.height-80 {
+  min-height: 80px;
+}

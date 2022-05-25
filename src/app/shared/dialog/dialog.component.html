@@ -1,0 +1,27 @@
+<div *ngIf="data.type; else sideAlert">
+  <div class="warningBox" *ngIf="data.type"> <!--warning-->
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center start">
+      <!-- <mat-icon fontSet="material-icons-round">warning</mat-icon> -->
+      <i class="material-icons material-icons-round">warning</i>
+      <p>{{data.title ? data.title : data.message}}</p>
+    </div>
+    <p *ngIf="data?.title">{{data.message}}</p>
+    <div class="navBtns">
+      <button class="c-btn c-btn--primary mr-3" (click)="confirm()">{{data.confirmText}}</button>
+      <button class="c-btn c-btn-outline--primary" (click)="cancel()">{{data.cancelText}}</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #sideAlert>
+  <div class="box">
+    <h3 mat-dialog-title >{{data.title}}</h3>
+    <div mat-dialog-content>
+      <p>{{data.message}}</p>
+      <p>{{data.message2}}</p>
+    </div>
+    <div mat-dialog-actions class="text-center">
+      <button class="btn btn-secondary" (click)="confirm()">{{data.confirmText}}</button>
+    </div>
+  </div>
+</ng-template>

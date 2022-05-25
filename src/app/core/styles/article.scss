@@ -1,0 +1,211 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+
+.contacts-box {
+  margin: 15px;
+}
+::ng-deep {
+  .contacts-box {
+    .list-disc {
+      li {
+        cursor: auto !important;
+      }
+    }
+    .list-disc-underline {
+      li {
+        list-style-type: disc;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-circle-underline {
+      li {
+        list-style-type: circle;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-square-underline {
+      li {
+        list-style-type: square;
+        text-decoration: underline;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-disc {
+      li {
+        list-style-type: disc;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-circle {
+      li {
+        list-style-type: circle;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-square {
+      li {
+        list-style-type: square;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .list-number {
+      li {
+        list-style-type: decimal !important;
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .order-list {
+      li {
+        margin-bottom: 10px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .title {
+      color: $teal;
+      font-size: $font-size-medium;
+      font-weight: $font-bold;
+      margin-bottom: 10px;
+    }
+
+    .second-title {
+      margin-top: 26px;
+    }
+  }
+  .c-help-articles--orderList {
+    padding-left: 20px;
+    > li {
+      list-style-type: decimal;
+      + li {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+::ng-deep .instructions {
+  font-size: $font-size-small;
+}
+::ng-deep .instructions > p:first-child {
+  color: $teal;
+  font-size: $font-size-medium;
+  font-weight: $font-bold;
+  margin-bottom: 10px;
+}
+
+::ng-deep .mce-content-body {
+  font-size: $font-size-small;
+}
+::ng-deep .mce-content-body > p:first-child {
+  color: $teal;
+  font-size: $font-size-medium;
+  font-weight: $font-bold;
+  margin-bottom: 10px;
+}
+
+.article-box {
+  margin: 20px 0px;
+}
+
+.related-articles {
+  background-color: #c3c7cc;
+  font-size: $font-size-small;
+  width: 260px;
+  padding: 10px 30px;
+}
+
+.resource-videos {
+  background-color: #c3c7cc;
+  font-size: $font-size-small;
+  width: 260px;
+  padding: 10px 30px;
+}
+
+.title-2 {
+  color: $teal;
+  font-size: $font-size-normal;
+  font-weight: $font-bold;
+  margin-bottom: 10px;
+  margin-left: -13px;
+}
+
+.related-articles,
+.resource-videos {
+  li {
+    list-style-type: circle;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+.c-help-articles--box {
+  padding-left: 15px;
+  > .header-4 {
+    margin-left: -16px;
+  }
+}
+
+@media (min-width: 1000px) {
+  ::ng-deep .container {
+    max-width: unset;
+  }
+}
+
+.edit-btn {
+  float: right;
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  z-index: 999;
+}
+.edit-btn2 {
+  float: right;
+  position: absolute;
+  right: 130px;
+  top: 20px;
+  z-index: 999;
+}
+
+::ng-deep {
+  .contacts-box {
+    quill-editor {
+      .ql-toolbar {
+        border: none;
+        background-color: #e5eaf0;
+        border-radius: 6px 6px 6px 6px;
+      }
+      .ql-container {
+        width: 100%;
+        border: none;
+      }
+      .ql-editor {
+        min-height: 150px !important;
+      }
+    }
+  }
+}

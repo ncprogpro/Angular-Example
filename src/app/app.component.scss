@@ -1,0 +1,93 @@
+.templates-main {
+  margin: 0.75em;
+  margin-top: 0;
+
+  .multiple-delete-btn-div {
+    text-align: right;
+    margin-top: 15px;
+    margin-right: 50px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  th {
+    font-weight: bold;
+  }
+}
+
+.templates-container {
+  position: relative;
+  min-height: 200px;
+
+  & .templates-table {
+    margin: auto;
+  }
+
+  & .mat-column-main_name {
+    width: 20%;
+    cursor: pointer;
+  }
+
+  & .mat-column-action {
+    width: 10%;
+  }
+
+  & .mat-column-thumbnail {
+    width: 5%;
+  }
+
+  & .mat-column-description {
+    width: 30%;
+  }
+
+  .mat-column-select {
+    width: 5%;
+  }
+
+  .mat-column-template_type {
+    width: 10%;
+  }
+
+  .mat-column-job {
+    width: 10%;
+  }
+
+  .mat-column-email_attachment {
+    width: 10%;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+.mat-table thead tr {
+  background-color: #e5eaf0;
+}
+
+.ic {
+  background-image: url("../assets/icons/marketing.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.edit {
+  background-image: url("../assets/icons/icon-pencil_active.png");
+  &:hover {
+    background-image: url("../assets/icons/icon-pencil_on.png");
+  }
+}
+
+.trash {
+  background-image: url("../assets/icons/icon-trash_active.png");
+  &:hover {
+    background-image: url("../assets/icons/icon-trash_on.png");
+  }
+}

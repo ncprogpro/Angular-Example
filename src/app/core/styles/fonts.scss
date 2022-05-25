@@ -1,0 +1,19 @@
+/* all fonts should be defined here */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// font weights for the Gordita font
+$font-bold: 500;
+$font-normal: 400;
+
+// these are the main font sizes for the application
+$font-size-large: 20px;   // 20pt
+$font-size-medium: 16px;  // 14pt
+$font-size-normal: 14px;  // 12pt
+$font-size-small: 12px;   // 11pt
+$font-size-xsmall: 10px;  // 10pt
+
+// special fonts
+$font-leftnav: 15px;
+
+// common font-family
+$font-family-Gordita : "Gordita";
+$font-family-roboto: 'Roboto', sans-serif;

@@ -1,0 +1,60 @@
+.sidebar {
+  & .content {
+    .form-warning {
+      font-size: 12px;
+      color: red;
+      margin: auto;
+    }
+
+    & .thumbnail-wrapper {
+      position: relative;
+      width: fit-content;
+      padding-right: 40px;
+
+      & .edit {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .media-section {
+      overflow: hidden;
+
+      .left, .right {
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  .sidebarHeader {
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #323a53;
+    }
+
+    .closeSidebar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: 'grInter';
+      font-size: 19px;
+      cursor: pointer;
+    }
+  }
+}
+
+::ng-deep .mat-dialog-container {
+  .mat-tab-label-container {
+    display: none;
+  }
+
+  .mat-tab-header {
+    border-bottom: none;
+  }
+}
+
+

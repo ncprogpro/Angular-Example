@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./main";
+@import "./colors";
+@import "./fonts";
+
+.primaryButton {
+  @extend .btn !optional;
+  background-color: $orange;
+  color: $white;
+  font-size: $font-size-normal;
+  font-weight: $font-normal;
+  line-height: $font-size-normal;
+  &:hover {
+    background: $orange;
+    color: $white;
+  }
+  &.disabled {
+    background-color: #b3b3b3;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 6px 10px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: no-drop;
+  }
+}
+
+.secondaryButton {
+  @extend .btn !optional;
+  background-color: $white;
+  color: $orange;
+  border: 1px solid $orange;
+  font-size: $font-size-normal;
+  font-weight: $font-normal;
+  line-height: $font-size-normal;
+  &:hover {
+    background-color: $white;
+    color: $orange;
+  }
+  &.disabled {
+    background-color: transparent;
+    color: #989898;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 6px 10px;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    border: 1px solid #ddd;
+    cursor: no-drop;
+  }
+}
+
+.linkButton {
+  font-size: $font-size-normal;
+  color: $teal;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover {
+    color: #178087;
+  }
+  &.disabled {
+    color: #74c5cb;
+    cursor: no-drop;
+  }
+}
+
+.link {
+  font-size: $font-size-normal;
+  color: $teal;
+  cursor: pointer;
+  &:hover {
+    color: #178087;
+  }
+  &.disabled {
+    color: #74c5cb;
+    cursor: no-drop;
+  }
+}
+
+.red-link {
+  @extend .link;
+  color: $red;
+  &:hover {
+    color: $red;
+  }
+  &.disabled {
+    color: $red;
+    cursor: no-drop;
+  }
+}

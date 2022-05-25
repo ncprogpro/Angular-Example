@@ -1,0 +1,56 @@
+@import 'colors';
+@import 'fonts';
+
+.sidebar {
+    .sidebarHeader {
+
+        .title {
+            font-size: $font-size-large;
+            font-weight: $font-bold;
+            color: $blue-header-text;
+        }
+
+        .center-title {
+          font-size: $font-size-medium;
+          font-weight: $font-bold;
+          color: $blue-header-text;
+      }
+
+        .sub-title {
+          font-size: $font-size-small;
+          font-weight: $font-bold;
+          color: $blue-header-text;
+        }
+
+        .closeSidebar {
+            cursor: pointer;
+            border: 1px solid $gray-placeholder-text;
+            color: $gray-placeholder-text;
+            border-radius: 8px;
+            width: 25px;
+            height: 25px;
+            font-size: $font-size-medium;
+            padding-bottom: 4px;
+            margin-top: 3px;
+            padding-top: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                border-color: $blue-body-text;
+                background-color: $gray-hover;
+                color: $blue-body-text
+            }
+        }
+    }
+}
+
+.list-disc {
+  li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+}

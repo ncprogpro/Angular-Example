@@ -1,0 +1,47 @@
+<div class="sidebar">
+	<mat-tab-group class="mediaTabs new-text-mat-tab-wrapper" [disablePagination]=true [selectedIndex]="tabIndex">
+    <mat-tab>
+			<div class="sidebarHeader">
+				<div fxLayout="row" fxLayoutAlign="space-between">
+					<div class="title">Edit Template</div>
+					<div class="closeSidebar" fxLayoutAlign="center center" (click)="dialogRef.close()">x</div>
+				</div>
+				<hr />
+			</div>
+
+			<div class="content">
+				<form [formGroup]="editForm" class="form" (ngSubmit)="onSubmit()">
+					<div class="form-group form-group-mb form-group-wrapper">
+						<label class="input-label">Template Name</label>
+						<input type="text" class="form-control form-control-sm input-txt" formControlName="templateName"
+							(input)="inputChange()" />
+						<p class="form-warning" *ngIf="submitting && editForm.get('templateName').errors">
+							<span *ngIf="editForm.get('templateName').errors.required">
+								Template Name is required.
+							</span>
+						</p>
+					</div>
+
+					<div class="form-group form-group-mb form-group-wrapper">
+						<label class="input-label">Description</label>
+						<textarea type="text" class="form-control form-control-sm input-txt" formControlName="description"></textarea>
+					</div>
+
+					<div>
+						<button type="submit" class="c-btn c-btn--primary mr-3">
+							Save
+						</button>
+						<button (click)="dialogRef.close()" class="c-btn c-btn-outline--primary button-pad">
+							Cancel
+						</button>
+					</div>
+				</form>
+			</div>
+		</mat-tab>
+
+		
+	</mat-tab-group>
+
+</div>
+
+

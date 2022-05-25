@@ -1,1 +1,520 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+$custom-typography: mat-typography-config(
+  $font-family: "Gordita",
+);
+@include mat-core($custom-typography);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$enrollpro-primary: mat-palette($mat-indigo);
+$enrollpro-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$enrollpro-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$enrollpro-theme: mat-light-theme(
+  (
+    color: (
+      primary: $enrollpro-primary,
+      accent: $enrollpro-accent,
+      warn: $enrollpro-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($enrollpro-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap";
+// @import "~ng-pick-datetime/assets/style/picker.min.css";
+@import "./app/core/styles/main";
+@import "./app/core/styles/colors";
+@import "./app/core/styles/fonts";
+@import "./app/core/styles/material-override.scss";
+@import "./app/core/styles/helper.scss";
+// @import "~@ctrl/ngx-emoji-mart/picker";
+
+// Reset Style
+* {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+//common font family
+body {
+  font-family: $font-family-Gordita !important;
+}
+
+input,
+textarea {
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-placeholder-text !important;
+    opacity: 1; /* Firefox */
+    font-size: $font-size-small;
+  }
+
+  &::-webkit-input-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-placeholder-text !important;
+    opacity: 1; /* Firefox */
+    font-size: $font-size-small;
+  }
+
+  &:-moz-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-placeholder-text !important;
+    opacity: 1; /* Firefox */
+    font-size: $font-size-small;
+  }
+  &::-moz-placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $gray-placeholder-text !important;
+    opacity: 1; /* Firefox */
+    font-size: $font-size-small;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $gray-placeholder-text !important;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $gray-placeholder-text !important;
+  }
+}
+input::placeholder {
+  color: red;
+}
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: red;
+}
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: red;
+}
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: red;
+}
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: red;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background: $teal;
+  height: 3px;
+}
+
+.mat-tab-label,
+.mat-tab-label-active {
+  min-width: 0 !important;
+  padding: 3px !important;
+  margin: 3px 30px 3px 10px !important;
+}
+
+.card {
+  width: 310px;
+  margin: 5px;
+}
+
+.card-footer {
+  background-color: transparent !important;
+}
+
+.mat-expansion-panel-header {
+  padding: 0 8px !important;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: 44px !important;
+}
+
+.mat-expansion-indicator:after {
+  color: $orange;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 10px 5px !important;
+}
+
+//Dragula stylesheet
+
+/* in-flight clone */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+//custom radio button
+
+.mat-radio-button .mat-radio-outer-circle {
+  border-color: $teal;
+  height: 15px;
+  width: 15px;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $teal;
+  height: 15px;
+  width: 15px;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  color: $teal;
+  background-color: $teal;
+  height: 15px;
+  width: 15px;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: $teal;
+}
+
+.mat-radio-label-content {
+  padding-left: 0 !important;
+  padding-right: 5px !important;
+}
+
+// Default style for shared left sidebar
+.mat-dialog-container {
+  margin: 0px !important;
+  border-radius: 0px !important;
+  // width: 400px !important;
+  // max-width: 400px !important;
+  // padding: 24px 0px 0px 0px !important;
+}
+.mat-dialog-title {
+  margin-top: 20px;
+  margin-left: 0px !important;
+  .event-signup-title {
+    color: $blue-header-text;
+    font-size: $font-size-large;
+    font-weight: $font-bold;
+    margin-left: 20px;
+    margin-bottom: -2px;
+  }
+  hr {
+    margin: 20px;
+  }
+  button {
+    float: right;
+    margin-right: 20px;
+    margin-top: -30px;
+    line-height: $font-size-normal;
+    background: $gray-placeholder-text;
+    font-size: $font-size-normal;
+    padding: 4px 8px 6px 8px;
+    outline: none;
+    color: $blue-body-text;
+    border: 1px solid $blue-body-text;
+    border-radius: 2px;
+  }
+  button:hover {
+    background: $gray-placeholder-text;
+  }
+}
+.sidebar .mat-dialog-content {
+  margin: 0px 20px !important;
+  padding: 0px !important;
+  height: 100%;
+  max-height: none;
+}
+.mat-dialog-actions {
+  margin-bottom: 60px;
+  min-height: 80px !important;
+  button {
+    border-radius: 2px !important;
+    border: 0px !important;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    min-width: 120px;
+    padding: 5px 20px;
+    font-size: $font-size-normal;
+    font-weight: $font-bold;
+  }
+}
+
+//.btn-orange {
+//  margin-left: 12px;
+//  background-color: $orange;
+//  color: $white;
+//  margin-right: 10px;
+//}
+//.btn-orange-ghost {
+//  background-color: $white;
+//  color: $orange;
+//  border: 1px solid $orange;
+//}
+.ql-editor {
+  background: #ffffff;
+
+  .circle-list {
+    li {
+      margin-left: 20px;
+      margin-bottom: 5px;
+      list-style-type: none;
+      padding-left: 10px;
+    }
+
+    li::before {
+      content: "•";
+      margin-left: -1.2em;
+      margin-right: 0.7em;
+      width: 0.5em;
+      height: 0.5em;
+    }
+  }
+}
+
+.circle-list {
+  li {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    list-style-type: none;
+    padding-left: 10px;
+  }
+  li::before {
+    content: "•";
+    margin-left: -1.2em;
+    margin-right: 0.7em;
+    width: 0.5em;
+    height: 0.5em;
+  }
+}
+
+.sidebar-content {
+  font-size: $font-size-normal;
+}
+
+.tippy-box[data-theme~="calendar"] {
+  background-color: #efefef;
+  color: black;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.fc .fc-daygrid-day-top {
+  flex-direction: row !important;
+}
+
+.fc-h-event {
+  background-color: transparent !important;
+  border: 0 !important;
+  overflow: hidden;
+  font-size: 12px !important;
+}
+
+.fc-h-event .fc-event-main {
+  color: black !important;
+}
+
+// .mat-checkbox .mat-checkbox-frame {
+//   //transform: scale(.8);
+// }
+// .mat-checkbox-checked .mat-checkbox-background {
+//   //transform: scale(.8);
+// }
+
+.c-btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 2.4;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: $font-family-roboto;
+  font-size: 14px;
+  border-radius: 0.25rem;
+  padding: 0px 10px;
+  outline: none !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  &.c-btn--small {
+    padding: 0px 10px;
+    line-height: 2.4 !important;
+    font-size: 13px !important;
+  }
+  &.c-btn-outline--primary {
+    color: $orange;
+    background-color: $white;
+    border: 1px solid $orange;
+    &:hover {
+      background-color: $orange;
+      border-color: $orange;
+      color: $white;
+    }
+  }
+
+  &.c-btn--primary {
+    color: $white;
+    background-color: $orange;
+    border: 1px solid $orange;
+    &:hover {
+      background-color: $white;
+      border-color: $orange;
+      color: $orange;
+    }
+  }
+
+  &.admin-btn-color {
+    background-color: $red;
+    border: 1px solid $red;
+
+    &:hover {
+      border-color: $red;
+      color: $red;
+    }
+  }
+}
+
+// Common
+.warning-color {
+  color: $warning-color;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.ml-25 {
+  margin-left: 25px;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}
+
+.width-100p {
+  width: 100%;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
+.c-btn.disabled {
+	background-color: rgb(246, 122, 93, 0.5);
+}
+
+.circle {
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+  }
+}
+
+.line-height-35 {
+  line-height: 35px;
+}
+
+// Editor
+.ql-toolbar {
+
+  >.ql-color-picker,
+  >.ql-icon-picker {
+    width: 31px;
+    position: relative;
+    top: -2px;
+  }
+  >.ql-link {
+    padding: 1px !important;
+    margin: 0 5px;
+  }
+  >.ql-media-manager {
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+  }
+  .ql-picker {
+    &.ql-expanded {
+      .ql-picker-options {
+        z-index: 9999;
+      }
+    }
+  }
+}
+::ng-deep {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),
+    only screen and (min--moz-device-pixel-ratio: 2) and (min-device-width: 1025px),
+    only screen and (-o-min-device-pixel-ratio: 2/1) and (min-device-width: 1025px),
+    only screen and (min-device-pixel-ratio: 2) and (min-device-width: 1025px),
+    only screen and (min-resolution: 192dpi) and (min-device-width: 1025px),
+    only screen and (min-resolution: 2dppx) and (min-device-width: 1025px) {
+    .initials {
+      position: relative;
+      top: 1px !important;
+      // line-height: 30px !important;
+    }
+    .contact-count{
+      line-height: 28px;
+      position: relative;
+      padding-top: 4px;
+    }
+    .header-right{
+      .header-right-icons{
+        .badges{
+          padding-top: 1px;
+        }
+        .user-name{
+          padding-top: 2px;
+        }
+      }
+    }
+    .selectedIcon{
+      mat-icon{
+        margin-top: 6px;
+      }
+    }
+  }
+}
